@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from cloudinary.models import CloudinaryField
 
 class Content(models.Model):
     thumbnail = models.TextField(blank=False)
@@ -7,7 +8,7 @@ class Content(models.Model):
     country = models.CharField(blank = False, max_length = 200, default= "India")
     heading = models.TextField(blank=False,default="null")
     subhead = models.TextField(blank=True)
-    img = models.ImageField(upload_to='photos/%Y/%m/%d/')
+    img = CloudinaryField('image')
     cont=models.TextField(blank=False)
     Date = models.DateTimeField(default=datetime.now, blank=True)
     is_published=models.BooleanField(default=True)

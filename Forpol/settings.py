@@ -13,7 +13,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_user_agents',
+    'cloudinary'
 ]
 '''CACHES = {
     'default': {
@@ -131,7 +136,12 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
+# adding config
+cloudinary.config( 
+  cloud_name = "dgx1wfack", 
+  api_key = "222725867755574", 
+  api_secret = "v9MHTx6plPSHF7twJTbMlo2ccKk" 
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -143,8 +153,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Forpol/static')]
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+'''MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'''
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
