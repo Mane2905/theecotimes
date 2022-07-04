@@ -201,7 +201,10 @@ figcaption.date{
         line-height: 23px;
     }
     figcaption.date{
-        font-size: 12px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        font-family: 'Scheherazade New', serif;
+        font-size: 19px;
     }
     
     
